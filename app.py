@@ -13,8 +13,8 @@ import plotly.graph_objects as go
 import streamlit as st
 from plotly.subplots import make_subplots
 
-from core.data import EVENT_LABELS, data_gaps, load_workbook, split_series_name
-from core.models import (
+from data import EVENT_LABELS, data_gaps, load_workbook, split_series_name
+from models import (
     HORIZON,
     MODEL_NAMES,
     backtest,
@@ -25,7 +25,7 @@ from core.models import (
     promo_table,
 )
 
-SAMPLE_FILE = Path(__file__).parent / "data" / "weekly_sales_price_data.xls"
+SAMPLE_FILE = Path(__file__).parent / "weekly_sales_price_data.xls"
 
 # Validated categorical palette (dataviz reference palette, light mode)
 C_ACTUAL = "#257de0"     # blue   - actual units

@@ -16,22 +16,21 @@ The sidebar holds the data import, the product/region choice and the promotion s
 ## Project structure
 
 ```
-app.py               # User interface only (tabs, charts, inputs)
-core/data.py         # Data import, regular price, holiday flags
-core/models.py       # Promotion regression, baseline, forecast models, backtest, promo economics
-data/                # Sample dataset (loaded when no file is uploaded)
-requirements.txt     # Python packages for Streamlit Cloud
+app.py                       # User interface only (tabs, charts, inputs)
+data.py                      # Data import, gap handling, regular price, holiday flags
+models.py                    # Promotion regression, baseline, forecast models, backtest, promo economics
+weekly_sales_price_data.xls  # Sample dataset (loaded when no file is uploaded)
+requirements.txt             # Python packages for Streamlit Cloud
 ```
 
-Changes to the interface go in `app.py`, and changes to calculations go in `core/`. Keeping them separate lets two people work at the same time without editing the same file.
+Changes to the interface go in `app.py`, and changes to calculations go in `data.py` / `models.py`. Keeping them separate lets two people work at the same time without editing the same file.
 
 ---
 
 ## One-time setup (team lead)
 
 1. **Create the repo:** on github.com, click **New repository** and name it `hafen-home-demand-suite`. Set it to **Private** and create it.
-2. **Upload the files:** click **uploading an existing file**, then drag in *everything* from this folder, including the `core`, `data` and `.streamlit` folders. Click **Commit changes**.
-   - Tip: Windows/macOS hide the `.streamlit` folder. If it's missing, the app still works with default colours.
+2. **Upload the files:** click **uploading an existing file**, then drag in all files. Click **Commit changes**.
 3. **Add teammates:** go to **Settings → Collaborators → Add people** and enter each teammate's GitHub username.
 4. **Deploy:** go to **share.streamlit.io**, sign in with GitHub, choose **Create app → Deploy a public app from GitHub**, then pick the repo, branch `main` and file `app.py`. Click **Deploy**.
    - After about 2 minutes you get a link like `https://hafen-home-....streamlit.app`. This is the link you submit.

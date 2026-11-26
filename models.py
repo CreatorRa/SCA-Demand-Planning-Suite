@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 from statsmodels.tsa.holtwinters import SimpleExpSmoothing
 
-from core.data import calendar_flags, clean_price, regular_price
+from data import calendar_flags, clean_price, regular_price
 
 HORIZON = 13
 MODEL_NAMES = [
